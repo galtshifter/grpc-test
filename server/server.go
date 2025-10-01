@@ -19,6 +19,7 @@ type server struct {
 
 func (s *server) GetQuotient(ctx context.Context, in *pb.DivisionPair) (*pb.DivisionResult, error) {
 	log.Printf("Received: %v, %v", in.Dividend, in.Divisor)
+
 	return &pb.DivisionResult{Value: in.Dividend / in.GetDivisor()}, nil
 }
 
